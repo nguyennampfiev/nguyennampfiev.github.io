@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tien Nam Nguyen — AI Research Engineer</title>
+<meta name="description" content="Tien Nam Nguyen — AI Research Engineer working on LLMs, Document AI and Speech AI. PhD in Computer Science, University of La Rochelle.">
+<meta property="og:title" content="Tien Nam Nguyen — AI Research Engineer">
+<meta property="og:description" content="LLMs, Document & Speech AI · PhD in Computer Science">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e4e8c'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'>TN</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfbfa; --surface:#ffffff; --text:#1b1f24; --muted:#5b6470; --line:#e4e6ea;
+  --accent:#1e4e8c; --accent-soft:#e8eff8; --chip:#f1f3f5;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1216; --surface:#161a20; --text:#e6e9ee; --muted:#9aa4b1; --line:#262c35;
+    --accent:#7fb0f0; --accent-soft:#1a2636; --chip:#1d232b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1216; --surface:#161a20; --text:#e6e9ee; --muted:#9aa4b1; --line:#262c35;
+  --accent:#7fb0f0; --accent-soft:#1a2636; --chip:#1d232b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+nav .brand{font-weight:700;color:var(--text)}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:14px}
+nav ul a{color:var(--muted)}
+nav ul a:hover{color:var(--text);text-decoration:none}
+#theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:15px;flex:none}
+header{padding:72px 0 40px}
+header .avatar{width:96px;height:96px;border-radius:50%;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line);margin-bottom:20px}
+h1{font-size:clamp(32px,6vw,44px);line-height:1.15;margin:0 0 8px;letter-spacing:-.02em}
+.tagline{font-size:clamp(17px,2.6vw,20px);color:var(--accent);font-weight:600;margin:0 0 16px}
+.lead{color:var(--muted);max-width:660px;margin:0 0 24px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:14px;font-weight:500}
+.btn:hover{border-color:var(--accent);text-decoration:none}
+.btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:36px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:22px;letter-spacing:-.01em}
+.stat span{color:var(--muted);font-size:13px}
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 24px;font-weight:600}
+.job{display:grid;grid-template-columns:150px 1fr;gap:4px 24px;padding:0 0 28px}
+.job:last-child{padding-bottom:0}
+.when{color:var(--muted);font-size:14px;padding-top:2px}
+.job h3{margin:0;font-size:17px}
+.job .org{color:var(--accent);font-weight:500;font-size:15px}
+.job .loc{color:var(--muted);font-size:14px}
+.job ul{margin:8px 0 10px;padding-left:18px}
+.job li{margin:3px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.chips li{background:var(--chip);color:var(--muted);font-size:12.5px;padding:3px 9px;border-radius:999px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.card:hover{border-color:var(--accent);text-decoration:none}
+.card h3{margin:0;font-size:16px;color:var(--text)}
+.card p{margin:0;color:var(--muted);font-size:14px;flex:1}
+.pubs{list-style:none;padding:0;margin:0}
+.pubs li{padding:12px 0;border-bottom:1px solid var(--line)}
+.pubs li:last-child{border:0}
+.venue{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:12px;padding:2px 8px;border-radius:6px;margin-right:8px;vertical-align:1px}
+.pubs .t{font-weight:500}
+.pubs .a{color:var(--muted);font-size:14px}
+.skills{display:grid;grid-template-columns:170px 1fr;gap:14px 24px}
+.skills dt{font-weight:600;font-size:15px}
+.skills dd{margin:0}
+.awards li{margin:6px 0}
+footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media (max-width:640px){
+  nav ul{display:none}
+  header{padding:48px 0 28px}
+  .job,.skills{grid-template-columns:1fr}
+  .when{padding-top:0}
+  .skills dd{margin-bottom:6px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#">Tien Nam Nguyen</a>
+  <ul>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button id="theme" aria-label="Toggle theme">◐</button>
+</div></nav>
+
+<main class="wrap">
+<header>
+  <img class="avatar" src="https://avatars.githubusercontent.com/u/13266638?v=4" alt="Tien Nam Nguyen">
+  <h1>Tien Nam Nguyen</h1>
+  <p class="tagline">AI Research Engineer — LLMs, Document &amp; Speech AI</p>
+  <p class="lead">PhD in Computer Science (University of La Rochelle, France) with 6+ years of R&amp;D experience, from research to deployment. I work on LLM fine-tuning and alignment (GRPO, DPO), agents and RAG, document intelligence (OCR, information extraction, NER/NEL) and speech AI (Speech-LLMs, ASR, VAD) — turning state-of-the-art models into useful products.</p>
+  <div class="links">
+    <a class="btn primary" href="mailto:namnt.pfiev@gmail.com">✉ Email</a>
+    <a class="btn" href="https://www.linkedin.com/in/tien-nam-nguyen/">LinkedIn</a>
+    <a class="btn" href="https://github.com/nguyennampfiev">GitHub</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>6+ years</b><span>AI R&amp;D experience</span></div>
+    <div class="stat"><b>EMNLP · ICDAR</b><span>LREC · ICPR · journals</span></div>
+    <div class="stat"><b>🥇 1st place</b><span>ICDAR 2021 competition</span></div>
+    <div class="stat"><b>3 languages</b><span>VI · EN · FR</span></div>
+  </div>
+</header>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="when">2026 – present</div>
+    <div>
+      <h3>AI Research Engineer</h3>
+      <div class="org">Lumi-VN <span class="loc">· Hanoi, Vietnam</span></div>
+      <ul>
+        <li>Building a voice agent on Speech-LLMs: designed multimodal alignment between an audio encoder and an LLM (linear projection), enabling end-to-end speech understanding for ASR and decision-making.</li>
+        <li>Built a real-time Voice Activity Detection (VAD) pipeline for streaming.</li>
+      </ul>
+      <ul class="chips"><li>Speech-LLMs</li><li>Qwen3-Omni</li><li>Whisper</li><li>WavLM</li><li>ASR</li><li>VAD</li></ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2025 – 2026</div>
+    <div>
+      <h3>Research Engineer — Neweyes Project</h3>
+      <div class="org">University of La Rochelle <span class="loc">· La Rochelle, France</span></div>
+      <ul>
+        <li>Reformulated quality estimation for information extraction as a regression problem and adapted LLMs to it through fine-tuning.</li>
+        <li>Aligned LLMs (GRPO, DPO) for named entity recognition and linking; results published at EMNLP 2026, LREC 2026 and ICDAR 2026.</li>
+      </ul>
+      <ul class="chips"><li>GRPO</li><li>DPO</li><li>Reinforcement learning</li><li>GPT-OSS</li><li>vLLM</li><li>NER / NEL</li></ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2024 – 2025</div>
+    <div>
+      <h3>Research Engineer — ANR Chamdoc Project</h3>
+      <div class="org">University of La Rochelle <span class="loc">· La Rochelle, France</span></div>
+      <ul>
+        <li>Fine-tuned Grounding DINO to detect stamps and seals in manuscripts.</li>
+        <li>Designed a hybrid loss on Swin Transformer V2 for feature extraction and similarity-based image retrieval.</li>
+      </ul>
+      <ul class="chips"><li>VLMs</li><li>Grounding DINO</li><li>Swin Transformer</li><li>Image retrieval</li></ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2020 – 2023</div>
+    <div>
+      <h3>PhD Candidate in Computer Science</h3>
+      <div class="org">University of La Rochelle <span class="loc">· La Rochelle, France</span></div>
+      <ul>
+        <li>End-to-end automatic analysis of Cham manuscripts, from raw image to text.</li>
+        <li>UNet-based image enhancement and denoising with attention; text line segmentation combining docExtractor and Seam Carving; Seq2Seq and Transformer models for transliteration of ancient texts.</li>
+        <li>Each component deployed as a microservice (Flask, Docker) and integrated into one workflow.</li>
+      </ul>
+      <ul class="chips"><li>OCR</li><li>Document image analysis</li><li>Segmentation</li><li>Transformers</li><li>Flask</li><li>Docker</li></ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2020 – 2021</div>
+    <div>
+      <h3>AI Engineer</h3>
+      <div class="org">DopikAI <span class="loc">· Hanoi, Vietnam</span></div>
+      <ul>
+        <li>Built an end-to-end information extraction solution for commercial invoices using LayoutLMv2.</li>
+        <li>Microservices architecture with unit and integration testing.</li>
+      </ul>
+      <ul class="chips"><li>LayoutLMv2</li><li>Information extraction</li><li>Microservices</li></ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2019 – 2020</div>
+    <div>
+      <h3>AI Engineer</h3>
+      <div class="org">TSDV <span class="loc">· Hanoi, Vietnam</span></div>
+      <ul>
+        <li>Wake-word (voice trigger) models with HTK and Kaldi.</li>
+        <li>Generative models (GANs, VAEs) to automatically remove hatching patterns from documents.</li>
+      </ul>
+      <ul class="chips"><li>Speech processing</li><li>Kaldi</li><li>GANs</li><li>VAEs</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/nguyennampfiev/LLMOpsRAG"><h3>LLMOpsRAG</h3><p>RAG document chatbot on GCP — ingestion, indexing and semantic search, with CI/CD and performance monitoring.</p><ul class="chips"><li>RAG</li><li>GCP</li><li>CI/CD</li></ul></a>
+    <a class="card" href="https://github.com/nguyennampfiev/Trend-News-Notifier"><h3>Trend-News-Notifier</h3><p>Multi-agent system: specialized LLM agents for search, summarization and broadcasting, with observability.</p><ul class="chips"><li>Agents</li><li>AWS</li><li>Grafana</li></ul></a>
+    <a class="card" href="https://github.com/nguyennampfiev/MDPO-NEL"><h3>MDPO-NEL</h3><p>Two-phase entity linking for historical newspapers with multi-negative preference fine-tuning (EMNLP 2026).</p><ul class="chips"><li>DPO</li><li>NEL</li><li>Wikidata</li></ul></a>
+    <a class="card" href="https://github.com/nguyennampfiev/MCP-demo"><h3>MCP-demo</h3><p>Model Context Protocol tooling with GPT-OSS.</p><ul class="chips"><li>MCP</li><li>LLM agents</li></ul></a>
+    <a class="card" href="https://github.com/nguyennampfiev/StampRetrieval"><h3>StampRetrieval</h3><p>Full pipeline for document retrieval based on stamp information.</p><ul class="chips"><li>Retrieval</li><li>Swin Transformer</li></ul></a>
+    <a class="card" href="https://github.com/nguyennampfiev/MSAED"><h3>MSAED</h3><p>Multi-scale attention for document image enhancement.</p><ul class="chips"><li>GANs</li><li>Document AI</li></ul></a>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Selected publications</h2>
+  <ul class="pubs">
+    <li><span class="venue">EMNLP 2026</span><span class="t">Beyond Pairwise Preference: Multi-Negative Preference Learning for LLM-Centric Historical Entity Linking</span><div class="a"><b>T.-N. Nguyen</b> et al.</div></li>
+    <li><span class="venue">ICDAR 2026</span><span class="t">One Model, Many Guidelines: Instruction Fine-Tuning for Historical Named Entity Recognition</span><div class="a"><b>T.-N. Nguyen</b> et al.</div></li>
+    <li><span class="venue">LREC 2026</span><span class="t">Reference-free at Inference Quality Estimation of Entity Recognition and Linking over OCRed Historical Texts</span><div class="a"><b>T.-N. Nguyen</b> et al.</div></li>
+    <li><span class="venue">IEEE Access 2025</span><span class="t">Enhancing Coffee Leaf Disease Classification via Active Learning and Diverse Sample Selection</span><div class="a">T.-C. Pham, <b>T.-N. Nguyen</b>, V.-D. Hoang, V.-D. Nguyen</div></li>
+    <li><span class="venue">Sci. Reports 2025</span><span class="t">Ambiguity-aware semi-supervised learning for leaf disease classification</span><div class="a"><b>T.-N. Nguyen</b> et al.</div></li>
+    <li><span class="venue">MTAP 2024</span><span class="t">Text line segmentation approach combining deep learning model and traditional image processing techniques — Application to Cham manuscript</span><div class="a"><b>T.-N. Nguyen</b> et al. · Multimedia Tools and Applications</div></li>
+    <li><span class="venue">ICPR 2022</span><span class="t">An effective method for text line segmentation in historical document images</span><div class="a"><b>T.-N. Nguyen</b> et al.</div></li>
+  </ul>
+</section>
+
+<section id="awards">
+  <h2>Awards</h2>
+  <ul class="awards">
+    <li>🥉 <b>3rd place</b> — HIPE-OCRepair competition, ICDAR 2026</li>
+    <li>🥇 <b>1st place (Task 1)</b>, 4th (Tasks 2 &amp; 3) — “Detect Building Blocks of the Document”, ICDAR 2021</li>
+    <li><b>5th of 62 teams</b> — SemEval-2024 Task 8: machine-generated text detection</li>
+  </ul>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>LLMs &amp; GenAI</dt><dd>Fine-tuning (LoRA, PEFT), alignment (GRPO, DPO, RL), quantization, RAG, vector databases, AI agents, LLM-as-a-judge</dd>
+    <dt>Documents &amp; NLP</dt><dd>OCR, document image analysis, information extraction (LayoutLM), NER, NEL, text classification</dd>
+    <dt>Speech</dt><dd>Speech-LLMs, multimodal alignment, ASR (Whisper, WavLM), real-time VAD</dd>
+    <dt>Computer vision</dt><dd>Object detection (Grounding DINO), VLMs, fine-grained image retrieval, segmentation, GANs, VAEs</dd>
+    <dt>Frameworks</dt><dd>Python, PyTorch, Hugging Face (Transformers, PEFT, TRL), vLLM, LangChain, OpenAI Agents SDK, MCP</dd>
+    <dt>MLOps &amp; Cloud</dt><dd>Docker, Kubernetes, Terraform, CI/CD, GCP, AWS, Flask, Prometheus, Grafana, Git</dd>
+  </dl>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="job">
+    <div class="when">2020 – 2023</div>
+    <div><h3>PhD in Computer Science and Applications</h3><div class="org">University of La Rochelle, France</div></div>
+  </div>
+  <div class="job">
+    <div class="when">2013 – 2018</div>
+    <div><h3>Engineering Degree in Information Systems — PFIEV</h3><div class="org">Hanoi University of Science and Technology</div></div>
+  </div>
+  <p style="color:var(--muted);margin:8px 0 0">Vietnamese (native) · English (fluent) · French (intermediate)</p>
+</section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <p style="margin:0 0 6px;color:var(--text);font-weight:600">Let’s talk</p>
+  <p style="margin:0">Open to R&amp;D / ML Engineer roles. Reach me at <a href="mailto:namnt.pfiev@gmail.com">namnt.pfiev@gmail.com</a> · <a href="https://www.linkedin.com/in/tien-nam-nguyen/">LinkedIn</a> · <a href="https://github.com/nguyennampfiev">GitHub</a></p>
+  <p style="margin:18px 0 0">© 2026 Tien Nam Nguyen</p>
+</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s);}catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
