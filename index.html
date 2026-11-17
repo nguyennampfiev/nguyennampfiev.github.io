@@ -59,6 +59,7 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute
 .job h3{margin:0;font-size:17px}
 .job .org{color:var(--accent);font-weight:500;font-size:15px}
 .job .loc{color:var(--muted);font-size:14px}
+.sub{margin:4px 0 0;font-style:italic;color:var(--muted);font-size:14px}
 .job ul{margin:8px 0 10px;padding-left:18px}
 .job li{margin:3px 0}
 .chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
@@ -106,7 +107,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
   <img class="avatar" src="https://avatars.githubusercontent.com/u/13266638?v=4" alt="Tien Nam Nguyen">
   <h1>Tien Nam Nguyen</h1>
   <p class="tagline">AI Research Engineer — LLMs, Document &amp; Speech AI</p>
-  <p class="lead">PhD in Computer Science (University of La Rochelle, France) with 6+ years of R&amp;D experience, from research to deployment. I work on LLM fine-tuning and alignment (GRPO, DPO), agents and RAG, document intelligence (OCR, information extraction, NER/NEL) and speech AI (Speech-LLMs, ASR, VAD) — turning state-of-the-art models into useful products.</p>
+  <p class="lead">PhD in Computer Science (University of La Rochelle, France) with 6+ years of R&amp;D experience, from research to deployment. I work on LLM fine-tuning and alignment (GRPO, DPO), agents and RAG, document intelligence (OCR, information extraction, NER/NEL) and speech AI (Speech-LLMs, full-duplex dialogue, target-speaker ASR, diarization) — turning state-of-the-art models into useful products.</p>
   <div class="links">
     <a class="btn primary" href="mailto:namnt.pfiev@gmail.com">✉ Email</a>
     <a class="btn" href="https://www.linkedin.com/in/tien-nam-nguyen/">LinkedIn</a>
@@ -128,11 +129,16 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
     <div>
       <h3>AI Research Engineer</h3>
       <div class="org">Lumi-VN <span class="loc">· Hanoi, Vietnam</span></div>
+      <p class="sub">Voice agents built on Speech-LLMs</p>
       <ul>
-        <li>Building a voice agent on Speech-LLMs: designed multimodal alignment between an audio encoder and an LLM (linear projection), enabling end-to-end speech understanding for ASR and decision-making.</li>
-        <li>Built a real-time Voice Activity Detection (VAD) pipeline for streaming.</li>
+        <li><b>Full-duplex dialogue:</b> developing a spoken dialogue model that listens and speaks at the same time, handling natural turn-taking, interruptions and backchannels.</li>
+        <li><b>Speech-LLM architecture:</b> connected audio encoders (Qwen3-Omni, NVIDIA Nemotron) to frozen LLM decoders through projection layers (linear / MLP) and learned soft-prompt tokens, trained in stages: alignment warm-up → ASR → spoken question answering.</li>
+        <li><b>Target-speaker ASR:</b> conditioning the model on a target speaker to transcribe only their speech in overlapping, noisy and far-field multi-speaker audio, with dedicated data augmentation.</li>
+        <li><b>Speaker diarization:</b> joint transcription and diarization (“who spoke when”) with timestamps for long-form multi-speaker conversations, fine-tuning end-to-end transcribe-diarize models.</li>
+        <li><b>Real-time streaming:</b> built Voice Activity Detection (VAD) and end-of-turn detection for low-latency voice interaction.</li>
+        <li><b>Efficient training &amp; evaluation:</b> 4-bit (NF4) quantized training of 30B-scale decoders on a single GPU, model serving, and benchmarking on VoiceBench.</li>
       </ul>
-      <ul class="chips"><li>Speech-LLMs</li><li>Qwen3-Omni</li><li>Whisper</li><li>WavLM</li><li>ASR</li><li>VAD</li></ul>
+      <ul class="chips"><li>Speech-LLMs</li><li>Full-duplex</li><li>Target-speaker ASR</li><li>Speaker diarization</li><li>Qwen3-Omni</li><li>Nemotron</li><li>Whisper</li><li>WavLM</li><li>VAD</li><li>Quantization</li></ul>
     </div>
   </div>
 
@@ -141,11 +147,15 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
     <div>
       <h3>Research Engineer — Neweyes Project</h3>
       <div class="org">University of La Rochelle <span class="loc">· La Rochelle, France</span></div>
+      <p class="sub">LLMs for information extraction from historical documents</p>
       <ul>
-        <li>Reformulated quality estimation for information extraction as a regression problem and adapted LLMs to it through fine-tuning.</li>
-        <li>Aligned LLMs (GRPO, DPO) for named entity recognition and linking; results published at EMNLP 2026, LREC 2026 and ICDAR 2026.</li>
+        <li><b>Entity linking (EMNLP 2026):</b> two-phase pipeline — an LLM generates normalized entity names to retrieve Wikidata candidates, then an LLM selector picks the right entity; trained with multi-negative preference learning (MDPO), going beyond pairwise DPO.</li>
+        <li><b>Named entity recognition (ICDAR 2026):</b> instruction fine-tuning so a single model follows many different annotation guidelines.</li>
+        <li><b>Quality estimation (LREC 2026):</b> reformulated quality estimation of NER/NEL over OCRed text as a regression problem, predicting quality without references at inference time.</li>
+        <li>Aligned LLMs with GRPO and DPO; efficient inference with vLLM and GPT-OSS (MXFP4).</li>
+        <li>3rd place at the HIPE-OCRepair competition, ICDAR 2026.</li>
       </ul>
-      <ul class="chips"><li>GRPO</li><li>DPO</li><li>Reinforcement learning</li><li>GPT-OSS</li><li>vLLM</li><li>NER / NEL</li></ul>
+      <ul class="chips"><li>GRPO</li><li>DPO / MDPO</li><li>Reinforcement learning</li><li>GPT-OSS</li><li>vLLM</li><li>NER / NEL</li><li>Wikidata</li></ul>
     </div>
   </div>
 
@@ -154,11 +164,14 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
     <div>
       <h3>Research Engineer — ANR Chamdoc Project</h3>
       <div class="org">University of La Rochelle <span class="loc">· La Rochelle, France</span></div>
+      <p class="sub">Stamp-based retrieval of historical documents</p>
       <ul>
-        <li>Fine-tuned Grounding DINO to detect stamps and seals in manuscripts.</li>
-        <li>Designed a hybrid loss on Swin Transformer V2 for feature extraction and similarity-based image retrieval.</li>
+        <li><b>Detection:</b> fine-tuned Grounding DINO (open-set detector) to locate stamps and seals in manuscripts.</li>
+        <li><b>Retrieval:</b> designed a hybrid loss (triplet loss with a custom hard-sample miner) on Swin Transformer V2 for fine-grained stamp features, then k-NN search to retrieve all documents with a similar stamp.</li>
+        <li>Benchmarked fine-grained recognition baselines (Destruction and Construction Learning).</li>
+        <li>Shipped an interactive demo (Streamlit / Gradio) packaged with Docker.</li>
       </ul>
-      <ul class="chips"><li>VLMs</li><li>Grounding DINO</li><li>Swin Transformer</li><li>Image retrieval</li></ul>
+      <ul class="chips"><li>VLMs</li><li>Grounding DINO</li><li>Swin Transformer</li><li>Metric learning</li><li>Image retrieval</li><li>Docker</li></ul>
     </div>
   </div>
 
@@ -167,12 +180,15 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
     <div>
       <h3>PhD Candidate in Computer Science</h3>
       <div class="org">University of La Rochelle <span class="loc">· La Rochelle, France</span></div>
+      <p class="sub">End-to-end analysis of Cham manuscripts, from raw image to text</p>
       <ul>
-        <li>End-to-end automatic analysis of Cham manuscripts, from raw image to text.</li>
-        <li>UNet-based image enhancement and denoising with attention; text line segmentation combining docExtractor and Seam Carving; Seq2Seq and Transformer models for transliteration of ancient texts.</li>
-        <li>Each component deployed as a microservice (Flask, Docker) and integrated into one workflow.</li>
+        <li><b>Image enhancement:</b> Pix2Pix GAN with multi-scale attention for denoising degraded documents (MSAED, ICDAR 2021).</li>
+        <li><b>Text line segmentation:</b> fine-tuned docExtractor for baseline extraction and extended Seam Carving with an extra cost function to adjust line boundaries (ICPR 2022, Multimedia Tools and Applications 2024).</li>
+        <li><b>Transliteration (OCR):</b> two-stage model — Seq2Seq from Cham to Latin alphabet, then a Transformer that corrects the output.</li>
+        <li><b>Production:</b> each component deployed as a Flask/Docker microservice and integrated into one workflow.</li>
+        <li>1st place (Task 1) at the ICDAR 2021 “Detect Building Blocks of the Document” competition.</li>
       </ul>
-      <ul class="chips"><li>OCR</li><li>Document image analysis</li><li>Segmentation</li><li>Transformers</li><li>Flask</li><li>Docker</li></ul>
+      <ul class="chips"><li>OCR</li><li>GANs</li><li>Document image analysis</li><li>Segmentation</li><li>Transformers</li><li>Flask</li><li>Docker</li></ul>
     </div>
   </div>
 
@@ -181,11 +197,13 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
     <div>
       <h3>AI Engineer</h3>
       <div class="org">DopikAI <span class="loc">· Hanoi, Vietnam</span></div>
+      <p class="sub">Invoice information extraction</p>
       <ul>
-        <li>Built an end-to-end information extraction solution for commercial invoices using LayoutLMv2.</li>
-        <li>Microservices architecture with unit and integration testing.</li>
+        <li>Built a pre-processing step that detects and corrects the orientation of scanned or photographed invoices.</li>
+        <li>Extracted key fields (invoice number, date, total amount…) with LayoutLMv2, robust to different invoice templates.</li>
+        <li>Delivered the model as a micro AI service integrated into the full extraction pipeline, with unit and integration tests.</li>
       </ul>
-      <ul class="chips"><li>LayoutLMv2</li><li>Information extraction</li><li>Microservices</li></ul>
+      <ul class="chips"><li>LayoutLMv2</li><li>Information extraction</li><li>Image processing</li><li>Microservices</li><li>Testing</li></ul>
     </div>
   </div>
 
@@ -194,11 +212,13 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
     <div>
       <h3>AI Engineer</h3>
       <div class="org">TSDV <span class="loc">· Hanoi, Vietnam</span></div>
+      <p class="sub">Speech recognition &amp; generative models</p>
       <ul>
-        <li>Wake-word (voice trigger) models with HTK and Kaldi.</li>
+        <li>Built wake-word (voice trigger) models for Russian, Spanish and French, combining HTK and Kaldi.</li>
+        <li>Tuned acoustic and language models per language to handle phonetic and acoustic variability.</li>
         <li>Generative models (GANs, VAEs) to automatically remove hatching patterns from documents.</li>
       </ul>
-      <ul class="chips"><li>Speech processing</li><li>Kaldi</li><li>GANs</li><li>VAEs</li></ul>
+      <ul class="chips"><li>ASR</li><li>Kaldi</li><li>HTK</li><li>GANs</li><li>VAEs</li></ul>
     </div>
   </div>
 </section>
@@ -242,7 +262,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
   <dl class="skills">
     <dt>LLMs &amp; GenAI</dt><dd>Fine-tuning (LoRA, PEFT), alignment (GRPO, DPO, RL), quantization, RAG, vector databases, AI agents, LLM-as-a-judge</dd>
     <dt>Documents &amp; NLP</dt><dd>OCR, document image analysis, information extraction (LayoutLM), NER, NEL, text classification</dd>
-    <dt>Speech</dt><dd>Speech-LLMs, multimodal alignment, ASR (Whisper, WavLM), real-time VAD</dd>
+    <dt>Speech</dt><dd>Speech-LLMs, full-duplex dialogue, multimodal alignment, ASR (Whisper, WavLM), target-speaker ASR, speaker diarization, real-time VAD</dd>
     <dt>Computer vision</dt><dd>Object detection (Grounding DINO), VLMs, fine-grained image retrieval, segmentation, GANs, VAEs</dd>
     <dt>Frameworks</dt><dd>Python, PyTorch, Hugging Face (Transformers, PEFT, TRL), vLLM, LangChain, OpenAI Agents SDK, MCP</dd>
     <dt>MLOps &amp; Cloud</dt><dd>Docker, Kubernetes, Terraform, CI/CD, GCP, AWS, Flask, Prometheus, Grafana, Git</dd>
